@@ -15,18 +15,28 @@ import errno
 
 ########### ##### ######################
 ## Channel : GPIO PIN, ordered from left to right when facing jacks
-PINMAPPING = { 1:4, 2:17, 3:22, 4:23, 5:24, 6:25, 7:8, 8:7}
+
+defaultPinmaps = {
+	'v1.0':{1:23, 2:24, 3:25, 4:8, 5:7, 6:22, 7:17, 8:4},
+	'v1.1':{1:4, 2:17, 3:22, 4:23, 5:24, 6:25, 7:8, 8:7},
+	'custom':{}
+}
 
 ## Load CONFIG stuff
 parser = SafeConfigParser({'location':'/dev/shm/missedTempLogs'})
 parser.read('/etc/templogger/templogger.conf')
+
+PINMAPPING = defaultPinmaps[parser.get('board_options','version')]
 
 sensors = {}
 for channel in range(1,1+8):
 	channelConf = "channel_%d" % channel
 	if parser.has_section(channelConf):
 		if (not parser.has_option(channelConf, 'use')) or  parser.getboolean(channelConf, 'use'):
-			sensors[channel] = {'pin':PINMAPPING[channel]}
+			if parser.has_option(channelConf, 'pin'):
+				sensors[channel] = {'pin':parser.getint(channelConf, 'pin')}
+			else:
+				sensors[channel] = {'pin':PINMAPPING[channel]}
 			if parser.has_option(channelConf, 'name'):
 				sensors[channel]['name'] = parser.get(channelConf,'name')
 			else:

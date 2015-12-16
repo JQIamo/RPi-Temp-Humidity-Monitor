@@ -1,5 +1,13 @@
 # Starts a comment line
 
+## Board Info
+# version chiefly determines what the default channel<->pin mapping is
+# valid options are 'v1.0', 'v1.1', and 'custom'
+# 'custom' doesn't define any pinout at all, so any used sensor will
+# *require* a 'pin' field.
+[board_options]
+version = v1.1
+
 ## Channel parameters
 # For each section channel_<number>, you're setting up the name and
 # whether to read a channel.
@@ -10,6 +18,9 @@
 # It is recommended that you avoid spaces in channel names
 #
 # 'use' is True or False, and is optional.
+#
+# 'pin' overrides the built-in pin definition for the channel.
+# ONLY USE THIS IF YOU KNOW WHAT YOU ARE DOING.
 #
 # A reading is not taken on a channel if there is no section for it
 # (e.g. if [channel_4] is missing it will not be read),
