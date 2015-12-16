@@ -1,0 +1,65 @@
+# Starts a comment line
+
+## Channel parameters
+# For each section channel_<number>, you're setting up the name and
+# whether to read a channel.
+#
+# Only channels 1-8 are checked
+#
+# 'name' will default to 'channel_<number>' if not given.
+# It is recommended that you avoid spaces in channel names
+#
+# 'use' is True or False, and is optional.
+#
+# A reading is not taken on a channel if there is no section for it
+# (e.g. if [channel_4] is missing it will not be read),
+# or if use = False for that section.
+#
+[channel_1]
+use = False
+#name = channel_1
+
+[channel_2]
+use = False
+#name = channel_2
+
+[channel_3]
+use = False
+#name = channel_3
+
+[channel_4]
+use = False
+#name = channel_4
+
+[channel_5]
+use = False
+#name = channel_5
+
+[channel_6]
+use = False
+#name = channel_6
+
+[channel_7]
+use = False
+#name = channel_7
+
+[channel_8]
+use = False
+#name = channel_8
+
+[influx]
+## All entries for the influx section are required.
+# The url for the database server
+url = <influxdb.url>
+# The port for the database
+port = 8086
+# Credentials
+username = <your_username>
+password = <your_password>
+# Database name
+database = <your_database>
+
+[missed]
+## The place you want to store reading when the server can't be reached
+#  Defaults to /dev/shm/missedTempLogs if not present
+#location = /dev/shm/missedTempLogs

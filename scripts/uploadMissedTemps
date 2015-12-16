@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import Adafruit_DHT
+from influxdb import InfluxDBClient
+
+# For Failure Recovery
+import json
+import os
+import time
+import errno
+
+from ConfigParser import SafeConfigParser
+
+########### ##### ######################
+
+parser = SafeConfigParser({'location':'/dev/shm/missedTempLogs'})
+parser.read('/etc/templogger/templogger.conf')
+
+missedDirectory = parser.get('missed','location')
+
+## Try to read old data, if we can find any
+data=[]
+try:
+	for file in os.listdir(missedDirectory):
+		if file.endswith('-missedTemps.json'):
+			fullPath = os.path.join(missedDirectory, file)
+			with open(fullPath, 'r') as loadfile:
+				loaddata=json.load(loadfile)
+			data += loaddata
+			os.remove(fullPath)
+except Exception, e:
+	print e
+
+## Now we have the data; try writing it. On failure, save it.
+if data:
+	try:
+		influx_url = parser.get('influx', 'url')
+		influx_port = parser.get('influx', 'port')
+		influx_user = parser.get('influx', 'username')
+		influx_pwd = parser.get('influx', 'password')
+		influx_db = parser.get('influx', 'database')
+		client = InfluxDBClient(influx_url, influx_port, influx_user, influx_pwd, influx_db)
+		client.write_points(data)
+	except Exception, e:
+		print e
+		try:
+			os.makedirs(missedDirectory)
+		except OSError as exception:
+			if exception.errno != errno.EEXIST:
+				raise
+		saveFilename = "%d-missedTemps.json" % time.time()
+		savePath = os.path.join(missedDirectory, saveFilename)
+		print "Attempting to save reading to %s" % savePath

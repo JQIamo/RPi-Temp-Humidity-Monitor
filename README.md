@@ -10,3 +10,6 @@ v1.1 Boards are orderable from OSHPark at the following links:
 - [PiTempLoggerv1.1-Sensor](https://oshpark.com/shared_projects/NIQoCTse) @ $12.00 per 3 boards
 
 They have been prototyped on a local board-fab machine, and a first run is en-route to the JQI.
+
+## Installing on a Raspberry Pi
+See instructions in `INSTALL.md`
