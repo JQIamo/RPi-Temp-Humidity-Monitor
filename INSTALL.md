@@ -74,8 +74,8 @@ First, copy the scripts to their final locations and set permissions:
 	chmod 711 /usr/local/sbin/readInfluxTemp.py
     
     cp uploadMissedTemps /etc/cron.hourly/
-	chown root:root /etc/cron.hourly/uploadMissedTemps
-	chmod 711 /etc/cron.hourly/uploadMissedTemps
+	chown root:root /etc/cron.hourly/uploadMissedTemps.py
+	chmod 711 /etc/cron.hourly/uploadMissedTemps.py
 
 Next, setup the cron entry to run `readInfluxTemp.py` every minute. Edit the file `/etc/crontab` and 
 add these lines to the end:
