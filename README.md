@@ -15,7 +15,7 @@ They have been prototyped on a local board-fab machine, and a first run is en-ro
 For one sensor baord:
 - 1 DHT22 [from Adafruit?](https://www.adafruit.com/product/385)
 - 1 of the above PiTempLoggerv1.1-Sensor
-- 1 of 1-2k 1206 SMT resistor
+- 1 of 1-10k 1206 SMT resistor (use a lower resistance, e.g. 1-2k, if your ethernet cable is over 15 feet)
 - 1 of 100nf 1206 SMT capacitor
 - 1 of ethernet jack (Man. Part No. 555164-1, TE/Amp, get from any distributor)
 - 1 Ethernet cable to connect to RPi (whatever length you need)
