@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7509,12 +7510,20 @@ Sized for standard hex nuts and screw heads with standard washers.</description>
 </class>
 </classes>
 <parts>
-<part name="DHT22" library="dht22" deviceset="DHT22" device="-H"/>
+<part name="DHT22" library="dht22" deviceset="DHT22" device="-H">
+<attribute name="PARTNO" value="385"/>
+</part>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="J1" library="con-amp" deviceset="555164-1" device=""/>
-<part name="C1" library="resistor" deviceset="C-US" device="C1206" value="100nF"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="R1206" value="1k"/>
+<part name="J1" library="con-amp" deviceset="555164-1" device="">
+<attribute name="PARTNO" value="555164-1"/>
+</part>
+<part name="C1" library="resistor" deviceset="C-US" device="C1206" value="100nF">
+<attribute name="PARTNO" value="CL31B104JBCNNNC"/>
+</part>
+<part name="R1" library="resistor" deviceset="R-US_" device="R1206" value="1k">
+<attribute name="PARTNO" value="ERJ-8ENF2001V"/>
+</part>
 <part name="U$2" library="info" deviceset="INFO" device="ROW">
 <attribute name="MODAUTH" value="ZSS"/>
 <attribute name="MODDATE" value="2015-12-09"/>
@@ -7527,12 +7536,20 @@ Sized for standard hex nuts and screw heads with standard washers.</description>
 <plain>
 </plain>
 <instances>
-<instance part="DHT22" gate="G$1" x="17.78" y="12.7"/>
+<instance part="DHT22" gate="G$1" x="17.78" y="12.7">
+<attribute name="PARTNO" x="17.78" y="12.7" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="P+1" gate="1" x="35.56" y="35.56"/>
 <instance part="GND1" gate="1" x="35.56" y="2.54"/>
-<instance part="J1" gate="G$1" x="73.66" y="17.78" rot="MR180"/>
-<instance part="C1" gate="G$1" x="55.88" y="20.32"/>
-<instance part="R1" gate="G$1" x="35.56" y="20.32" rot="R90"/>
+<instance part="J1" gate="G$1" x="73.66" y="17.78" rot="MR180">
+<attribute name="PARTNO" x="73.66" y="17.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C1" gate="G$1" x="55.88" y="20.32">
+<attribute name="PARTNO" x="55.88" y="20.32" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R1" gate="G$1" x="35.56" y="20.32" rot="R90">
+<attribute name="PARTNO" x="35.56" y="20.32" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$2" gate="G$1" x="2.54" y="30.48">
 <attribute name="MODAUTH" x="2.54" y="30.48" size="1.778" layer="96" display="off"/>
 <attribute name="MODDATE" x="2.54" y="30.48" size="1.778" layer="96" display="off"/>

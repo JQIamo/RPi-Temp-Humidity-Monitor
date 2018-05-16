@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2367,15 +2368,33 @@ RJ45 Jack connectors&lt;br&gt;
 </class>
 </classes>
 <parts>
-<part name="SV1" library="con-harting-ml" deviceset="ML26" device="" value="RPi"/>
-<part name="J1" library="con-amp" deviceset="555164-1" device="" value="GPIO4"/>
-<part name="J2" library="con-amp" deviceset="555164-1" device="" value="GPIO17"/>
-<part name="J3" library="con-amp" deviceset="555164-1" device="" value="GPIO22"/>
-<part name="J4" library="con-amp" deviceset="555164-1" device="" value="GPIO23"/>
-<part name="J5" library="con-amp" deviceset="555164-1" device="" value="GPIO24"/>
-<part name="J8" library="con-amp" deviceset="555164-1" device="" value="GPIO7"/>
-<part name="J7" library="con-amp" deviceset="555164-1" device="" value="GPIO8"/>
-<part name="J6" library="con-amp" deviceset="555164-1" device="" value="GPIO25"/>
+<part name="SV1" library="con-harting-ml" deviceset="ML26" device="" value="RPi">
+<attribute name="PARTNO" value="SBH11-PBPC-D13-ST-BK"/>
+</part>
+<part name="J1" library="con-amp" deviceset="555164-1" device="" value="GPIO4">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J2" library="con-amp" deviceset="555164-1" device="" value="GPIO17">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J3" library="con-amp" deviceset="555164-1" device="" value="GPIO22">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J4" library="con-amp" deviceset="555164-1" device="" value="GPIO23">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J5" library="con-amp" deviceset="555164-1" device="" value="GPIO24">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J8" library="con-amp" deviceset="555164-1" device="" value="GPIO7">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J7" library="con-amp" deviceset="555164-1" device="" value="GPIO8">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
+<part name="J6" library="con-amp" deviceset="555164-1" device="" value="GPIO25">
+<attribute name="PARTNO" value="5555164-1"/>
+</part>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
@@ -2390,15 +2409,33 @@ RJ45 Jack connectors&lt;br&gt;
 <plain>
 </plain>
 <instances>
-<instance part="SV1" gate="1" x="66.04" y="68.58" rot="MR180"/>
-<instance part="J1" gate="G$1" x="12.7" y="116.84" rot="R180"/>
-<instance part="J2" gate="G$1" x="12.7" y="83.82" rot="R180"/>
-<instance part="J3" gate="G$1" x="12.7" y="50.8" rot="R180"/>
-<instance part="J4" gate="G$1" x="12.7" y="12.7" rot="R180"/>
-<instance part="J5" gate="G$1" x="-27.94" y="5.08" rot="R180"/>
-<instance part="J8" gate="G$1" x="-25.4" y="50.8" rot="R180"/>
-<instance part="J7" gate="G$1" x="-25.4" y="83.82" rot="R180"/>
-<instance part="J6" gate="G$1" x="-25.4" y="116.84" rot="R180"/>
+<instance part="SV1" gate="1" x="66.04" y="68.58" rot="MR180">
+<attribute name="PARTNO" x="66.04" y="68.58" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J1" gate="G$1" x="12.7" y="116.84" rot="R180">
+<attribute name="PARTNO" x="12.7" y="116.84" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J2" gate="G$1" x="12.7" y="83.82" rot="R180">
+<attribute name="PARTNO" x="12.7" y="83.82" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J3" gate="G$1" x="12.7" y="50.8" rot="R180">
+<attribute name="PARTNO" x="12.7" y="50.8" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J4" gate="G$1" x="12.7" y="12.7" rot="R180">
+<attribute name="PARTNO" x="12.7" y="12.7" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J5" gate="G$1" x="-27.94" y="5.08" rot="R180">
+<attribute name="PARTNO" x="-27.94" y="5.08" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J8" gate="G$1" x="-25.4" y="50.8" rot="R180">
+<attribute name="PARTNO" x="-25.4" y="50.8" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J7" gate="G$1" x="-25.4" y="83.82" rot="R180">
+<attribute name="PARTNO" x="-25.4" y="83.82" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J6" gate="G$1" x="-25.4" y="116.84" rot="R180">
+<attribute name="PARTNO" x="-25.4" y="116.84" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="+3V1" gate="G$1" x="78.74" y="96.52"/>
 <instance part="GND1" gate="1" x="30.48" y="-15.24"/>
 <instance part="GND2" gate="1" x="0" y="-15.24"/>
